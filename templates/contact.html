@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Contact | IT Solution App{% endblock %}
+{% block content %}
+<section class="panel" style="margin-top: 3rem;">
+    <div class="section-title"><h2>Contact our team</h2></div>
+    {% if submitted %}
+    <div class="alert">
+        <strong>Thank you!</strong> Your message has been received. We will reach out within one business day.
+    </div>
+    {% endif %}
+    <form method="post" class="form-grid" style="margin-top: 1.5rem;">
+        <div class="input-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="input-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Business name" required>
+        </div>
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required>
+        </div>
+        <div class="input-group">
+            <label for="message">Project brief</label>
+            <textarea id="message" name="message" placeholder="Tell us about your goals and challenges" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send message</button>
+    </form>
+</section>
+{% endblock %}

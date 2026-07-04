@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Home | IT Solution App{% endblock %}
+{% block content %}
+<section class="hero">
+    <div class="hero-copy">
+        <p class="section-title"><span>Leading with clarity</span></p>
+        <h1>Modern software solutions for businesses that need reliability, speed, and growth.</h1>
+        <p>We design tailored systems, automate operations, and protect your digital infrastructure so teams can focus on outcomes. Experience a professional IT partner built for ambitious organizations.</p>
+        <a href="{{ url_for('contact') }}" class="btn">Start your project</a>
+    </div>
+    <div class="hero-visual panel">
+        <img src="{{ url_for('static', filename='img/hero.svg') }}" alt="Abstract software transformation illustration">
+    </div>
+</section>
+
+<section class="panel">
+    <div class="section-title"><h2>Built for business impact</h2></div>
+    <div class="features">
+        <div class="feature">
+            <strong>01</strong>
+            <div>
+                <h3>Clear strategy</h3>
+                <p>Align every software move with measurable business goals, from automation to customer engagement.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <strong>02</strong>
+            <div>
+                <h3>Scalable architecture</h3>
+                <p>Frameworks and processes that adapt as your business grows without slowing down operations.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <strong>03</strong>
+            <div>
+                <h3>Trusted delivery</h3>
+                <p>Fast implementation, honest communication, and polished outcomes that win internal support.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <strong>04</strong>
+            <div>
+                <h3>Continuous support</h3>
+                <p>Ongoing reliability checks so your systems stay secure and responsive as your needs evolve.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="panel" style="margin-top: 2rem;">
+    <div class="section-title"><h2>Trusted by teams that need software to perform</h2></div>
+    <div class="cards">
+        <div class="card">
+            <h3>Custom workflow automation</h3>
+            <p>Streamline sales, delivery, and reporting with software designed around your team’s unique operations.</p>
+        </div>
+        <div class="card">
+            <h3>Security-first deployment</h3>
+            <p>Secure systems, encrypted data flows, and infrastructure that keeps your business protected 24/7.</p>
+        </div>
+        <div class="card">
+            <h3>Cloud-enabled performance</h3>
+            <p>Cloud architecture that accelerates collaboration, optimizes cost, and keeps your applications available worldwide.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact — IT Solution App</title>
+    <style>
+        :root{--accent:#22bbda;--text:#eef5ff;--muted:#b8c8e6;--surface:rgba(8,24,65,0.95)}
+        body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:linear-gradient(180deg,#04122f 0%,#051a3b 100%);color:var(--text)}
+        .page{max-width:1080px;margin:0 auto;padding:2rem}
+        header{display:flex;justify-content:space-between;align-items:center;padding-bottom:1rem}
+        .brand{font-weight:800;letter-spacing:.12em}
+        .nav a{color:var(--muted);text-decoration:none;margin-left:1rem}
+        .panel{background:var(--surface);padding:2rem;border-radius:20px;border:1px solid rgba(255,255,255,0.06)}
+        h1{margin:0 0 1rem}
+        p{color:var(--muted);line-height:1.7}
+        form{display:grid;gap:1rem;margin-top:1rem}
+        input,textarea{width:100%;padding:.8rem;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:rgba(0,0,0,0.12);color:var(--text)}
+        button{border:none;padding:.8rem 1.2rem;border-radius:999px;background:linear-gradient(135deg,#22bbda,#0b63c9);color:#04122f;font-weight:700}
+        footer{margin-top:2rem;color:var(--muted);text-align:center}
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div class="brand">IT Solution App</div>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <main class="panel" style="margin-top:1rem">
+            <h1>Contact us</h1>
+            <p>Interested in a project or need advice? Send a short brief and we'll get back within one business day.</p>
+
+            <form method="post" action="#">
+                <input type="text" name="name" placeholder="Your name" required />
+                <input type="email" name="email" placeholder="Your email" required />
+                <input type="text" name="company" placeholder="Company (optional)" />
+                <textarea name="message" rows="6" placeholder="Project brief" required></textarea>
+                <button type="submit">Send message</button>
+            </form>
+        </main>
+
+        <footer>
+            © 2026 IT Solution App
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Solution App</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #04122f;
+            --surface: rgba(8, 24, 65, 0.95);
+            --surface-soft: rgba(14, 41, 95, 0.72);
+            --accent: #22bbda;
+            --text: #eef5ff;
+            --muted: #b8c8e6;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Inter, system-ui, sans-serif;
+            background: radial-gradient(circle at top left, rgba(34,187,218,0.14), transparent 25%),
+                        linear-gradient(180deg, #04122f 0%, #051a3b 100%);
+            color: var(--text);
+        }
+        .page {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 2rem 1.25rem 4rem;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 0;
+        }
+        .brand {
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text);
+        }
+        .nav {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .nav a:hover { color: var(--text); }
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr minmax(260px, 380px);
+            gap: 2rem;
+            align-items: center;
+            padding: 4rem 0 2rem;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.02;
+            margin: 0;
+        }
+        .hero p {
+            margin: 1.5rem 0 2rem;
+            max-width: 40rem;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+        .hero button {
+            border: none;
+            border-radius: 999px;
+            padding: 1rem 1.8rem;
+            background: linear-gradient(135deg, #22bbda, #0b63c9);
+            color: #05122f;
+            cursor: pointer;
+            font-weight: 700;
+        }
+        .panel {
+            background: var(--surface);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 32px;
+            padding: 2rem;
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
+        }
+        .section-title {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--accent);
+        }
+        .section-title::before {
+            content: "";
+            width: 42px;
+            height: 2px;
+            background: var(--accent);
+        }
+        .cards {
+            display: grid;
+            gap: 1.5rem;
+        }
+        .card {
+            background: rgba(5, 20, 48, 0.86);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 1.75rem;
+        }
+        .card h3 { margin-top: 0; }
+        .card p { color: var(--muted); line-height: 1.7; }
+        .grid {
+            display: grid;
+            gap: 1.25rem;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .feature {
+            background: rgba(8, 29, 69, 0.82);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 1.5rem;
+        }
+        .feature strong {
+            display: inline-block;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(34, 187, 218, 0.2);
+            color: var(--text);
+            font-size: 1rem;
+            line-height: 42px;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .feature h3 { margin: 0 0 0.75rem; }
+        .feature p { color: var(--muted); margin: 0; }
+        .image-panel {
+            border-radius: 32px;
+            overflow: hidden;
+            min-height: 420px;
+            background: radial-gradient(circle at top, rgba(34,187,218,0.16), transparent 28%),
+                        linear-gradient(180deg, rgba(8,24,65,0.92), rgba(4,13,33,0.95));
+            display: grid;
+            place-items: center;
+            padding: 2rem;
+        }
+        .image-panel img {
+            width: 100%;
+            max-width: 340px;
+            filter: drop-shadow(0 24px 40px rgba(0,0,0,0.25));
+        }
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+        @media (max-width: 860px) {
+            .hero { grid-template-columns: 1fr; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div class="brand">IT Solution App</div>
+            <nav class="nav">
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div>
+                <p class="section-title">Professional software for growing businesses</p>
+                <h1>Build smarter systems, simplify operations, and scale with confidence.</h1>
+                <p>Our IT solutions help teams reduce risk, automate workflows, and deliver exceptional digital experiences through modern tools and expert support.</p>
+                <button onclick="window.location.href='contact.html'">Get started</button>
+            </div>
+            <div class="image-panel">
+                <img src="static/img/hero.svg" alt="Abstract business software illustration">
+            </div>
+        </section>
+
+        <section class="panel" style="margin-top: 2.5rem;">
+            <div class="section-title">Why choose us</div>
+            <div class="grid">
+                <div class="feature">
+                    <strong>01</strong>
+                    <h3>Business-first software</h3>
+                    <p>We build systems that support real business outcomes: faster workflows, better insight, and improved customer service.</p>
+                </div>
+                <div class="feature">
+                    <strong>02</strong>
+                    <h3>Secure and scalable</h3>
+                    <p>Cloud infrastructure and security best practices that keep your business protected as you grow.</p>
+                </div>
+                <div class="feature">
+                    <strong>03</strong>
+                    <h3>Fast delivery</h3>
+                    <p>Clear milestones, collaborative design, and polished launches that minimize disruption and maximize value.</p>
+                </div>
+                <div class="feature">
+                    <strong>04</strong>
+                    <h3>Support you can trust</h3>
+                    <p>Long-term support and updates so your systems continue to perform and evolve with your needs.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            © 2026 IT Solution App • Trusted software services for businesses
+        </footer>
+    </div>
+</body>
+</html>
