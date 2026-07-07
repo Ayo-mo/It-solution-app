@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    image: it-solution-app:1.0
+    container_name: it-solution-container
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    volumes:
+      - .:/app
+
+
