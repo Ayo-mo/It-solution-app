@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Admin | Contact Submissions{% endblock %}
+
+{% block content %}
+
+<section class="panel" style="margin-top:3rem;">
+
+    <div class="section-title">
+        <h2>Customer Contact Submissions</h2>
+        <p>
+    View and manage customer enquiries submitted through the IT Solution website.
+</p>
+    </div>
+
+    {% if contacts %}
+
+    <div class="table-container">
+
+        <table class="admin-table">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Company</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Submitted</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            {% for contact in contacts %}
+
+                <tr>
+                    <td>{{ contact.id }}</td>
+                    <td>{{ contact.name }}</td>
+                    <td>{{ contact.company }}</td>
+                    <td>{{ contact.email }}</td>
+
+                    <td class="message-column">
+                        {{ contact.message }}
+                    </td>
+
+                    <td>
+                        {{ contact.created_at.strftime("%d %b %Y %H:%M") }}
+                    </td>
+
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    {% else %}
+
+    <div class="alert">
+        No contact submissions yet.
+    </div>
+
+    {% endif %}
+
+</section>
+
+{% endblock %}

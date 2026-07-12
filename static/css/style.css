@@ -293,3 +293,57 @@ textarea {
         grid-template-columns: 1fr;
     }
 }
+
+
+
+/* ===========================
+   Admin Contact Table
+=========================== */
+
+.table-container{
+    margin-top:2rem;
+    overflow-x:auto;
+    border:1px solid var(--border);
+    border-radius:20px;
+}
+
+.admin-table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--surface);
+    color:var(--text);
+}
+
+.admin-table thead{
+    background:var(--surface-strong);
+}
+
+.admin-table th{
+    padding:18px;
+    text-align:left;
+    color:var(--accent);
+    font-weight:700;
+    letter-spacing:.5px;
+    border-bottom:1px solid var(--border);
+}
+
+.admin-table td{
+    padding:18px;
+    color:var(--muted);
+    border-bottom:1px solid var(--border);
+    vertical-align:top;
+}
+
+.admin-table tbody tr:hover{
+    background:rgba(34,187,218,.08);
+    transition:.25s ease;
+}
+
+.message-column{
+    max-width:420px;
+    line-height:1.7;
+}
+
+.admin-table td:last-child{
+    white-space:nowrap;
+}
