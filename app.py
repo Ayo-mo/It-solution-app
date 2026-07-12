@@ -62,6 +62,7 @@ def services():
 def contact():
     submitted = False
 
+
     if request.method == "POST":
     
 
@@ -81,7 +82,14 @@ def contact():
         submitted = True
 
     return render_template("contact.html", submitted=submitted)
-
+@app.route("/admin/contacts")
+def admin_contacts():
+    contacts = Contact.query.order_by(Contact.created_at.desc()).all()
+    return render_template(
+        "admin_contacts.html",
+        contacts=contacts
+    )
+    
 with app.app_context():
     db.create_all()
 
