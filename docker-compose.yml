@@ -3,6 +3,10 @@ services:
     build: .
     image: it-solution-app:1.0
     container_name: it-solution-container
+
+    env_file:
+      - .env
+
     ports:
       - "5000:5000"
     restart: unless-stopped
@@ -18,7 +22,7 @@ services:
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD} 
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
