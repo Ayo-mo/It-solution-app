@@ -327,11 +327,12 @@ textarea {
     border-bottom:1px solid var(--border);
 }
 
+
 .admin-table td{
     padding:18px;
     color:var(--muted);
     border-bottom:1px solid var(--border);
-    vertical-align:top;
+    vertical-align:middle;
 }
 
 .admin-table tbody tr:hover{
@@ -339,9 +340,13 @@ textarea {
     transition:.25s ease;
 }
 
+
 .message-column{
-    max-width:420px;
+    min-width:320px;
+    max-width:450px;
     line-height:1.7;
+    white-space:normal;
+    word-break:break-word;
 }
 
 .admin-table td:last-child{
