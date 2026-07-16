@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 import os
@@ -89,6 +89,24 @@ def admin_contacts():
         "admin_contacts.html",
         contacts=contacts
     )
+@app.route("/admin/contacts/<int:id>/edit", methods=["GET", "POST"])
+def edit_contact(id):
+    contact = Contact.query.get_or_404(id)
+
+    if request.method == "POST":
+        contact.name = request.form["name"]
+        contact.company = request.form["company"]
+        contact.email = request.form["email"]
+        contact.message = request.form["message"]
+
+        db.session.commit()
+
+        return redirect("/admin/contacts")
+
+    return render_template(
+        "edit_contact.html",
+        contact=contact
+    )    
     
 with app.app_context():
     db.create_all()
