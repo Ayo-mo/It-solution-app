@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Contact | IT Solution App{% endblock %}
+
+{% block content %}
+
+<section class="panel" style="margin-top: 3rem;">
+
+    <div class="section-title">
+        <h2>Edit Contact Submission</h2>
+    </div>
+
+    <form method="POST" class="form-grid" style="margin-top:1.5rem;">
+
+        <div class="input-group">
+            <label>Name</label>
+            <input
+                type="text"
+                name="name"
+                value="{{ contact.name }}"
+                required>
+        </div>
+
+        <div class="input-group">
+            <label>Company</label>
+            <input
+                type="text"
+                name="company"
+                value="{{ contact.company }}"
+                required>
+        </div>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input
+                type="email"
+                name="email"
+                value="{{ contact.email }}"
+                required>
+        </div>
+
+        <div class="input-group">
+            <label>Project Brief</label>
+            <textarea
+                name="message"
+                required>{{ contact.message }}</textarea>
+        </div>
+
+        <button type="submit" class="btn">
+            Save Changes
+        </button>
+
+    </form>
+
+</section>
+
+{% endblock %}
