@@ -19,3 +19,17 @@ env/
 
 # Windows
 Thumbs.db
+
+# Python caches
+.pytest_cache/
+.mypy_cache/
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# Logs
+*.log
+
+# Docker overrides
+docker-compose.override.yml
