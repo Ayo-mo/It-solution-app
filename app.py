@@ -84,7 +84,7 @@ def contact():
     return render_template("contact.html", submitted=submitted)
 @app.route("/admin/contacts")
 def admin_contacts():
-    contacts = Contact.query.order_by(Contact.created_at.desc()).all()
+    contacts = Contact.query.order_by(Contact.id).all()
     return render_template(
         "admin_contacts.html",
         contacts=contacts
@@ -107,6 +107,14 @@ def edit_contact(id):
         "edit_contact.html",
         contact=contact
     )    
+@app.route("/admin/contacts/<int:id>/delete", methods=["POST"])
+def delete_contact(id):
+    contact = Contact.query.get_or_404(id)
+
+    db.session.delete(contact)
+    db.session.commit()
+
+    return redirect("/admin/contacts")    
     
 with app.app_context():
     db.create_all()
