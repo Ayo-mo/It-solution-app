@@ -1,10 +1,10 @@
 name: Flask CI Pipeline
 
-on:
+"on":
   push:
     branches:
       - main
-      - feature/**
+      - "feature/**"
   pull_request:
     branches:
       - main
