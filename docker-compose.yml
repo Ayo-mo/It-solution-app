@@ -1,5 +1,6 @@
 services:
   web:
+    build: .
     image: ayodeji2309/it-solution-app:latest
     container_name: it-solution-container
 
