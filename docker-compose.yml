@@ -1,7 +1,6 @@
 services:
   web:
-    build: .
-    image: it-solution-app:1.0
+    image: ayodeji2309/it-solution-app:latest
     container_name: it-solution-container
 
     env_file:
@@ -10,8 +9,7 @@ services:
     ports:
       - "5000:5000"
     restart: unless-stopped
-    volumes:
-      - .:/app
+    
     depends_on:
       - db
 
