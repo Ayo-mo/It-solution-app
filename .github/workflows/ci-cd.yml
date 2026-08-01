@@ -12,7 +12,7 @@ on:
 
 jobs:
 
-  docker-build-and-push:
+  docker-build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -37,7 +37,7 @@ jobs:
         run: docker build -t it-solution-app:test .
 
   docker:
-    needs: build-and-test
+    needs: docker-build-and-test
 
     if: github.ref == 'refs/heads/main'
 
@@ -66,7 +66,7 @@ jobs:
             type=raw,value=latest
             type=sha
 
-      - name: Build and Push Docker Image
+      - name: Build-and-Push Docker Image
         uses: docker/build-push-action@v6
         with:
           context: .
@@ -81,7 +81,7 @@ jobs:
       #     tags: ayodeji2309/it-solution-app:latest
 
   deploy-to-ec2:
-    needs: docker
+    needs: docker-build-and-push
 
     if: github.ref == 'refs/heads/main'
 
