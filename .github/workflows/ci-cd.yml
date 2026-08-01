@@ -11,8 +11,7 @@ on:
       - main
 
 jobs:
-
-  docker-build-and-test:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -36,15 +35,14 @@ jobs:
       - name: Build Docker Image
         run: docker build -t it-solution-app:test .
 
-  docker:
-    needs: docker-build-and-test
+  docker-build-and-push:
+    needs: build-and-test
 
     if: github.ref == 'refs/heads/main'
 
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -66,19 +64,12 @@ jobs:
             type=raw,value=latest
             type=sha
 
-      - name: Build-and-Push Docker Image
+      - name: Build and Push Docker Image
         uses: docker/build-push-action@v6
         with:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}    
-
-      # - name: Build and Push Docker Image
-      #   uses: docker/build-push-action@v6
-      #   with:
-      #     context: .
-      #     push: true
-      #     tags: ayodeji2309/it-solution-app:latest
 
   deploy-to-ec2:
     needs: docker-build-and-push
@@ -86,10 +77,8 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     runs-on: ubuntu-latest
-
     steps:
-
-      - name:  Deploy to AWS EC2
+      - name: Deploy to AWS EC2
 
         uses: appleboy/ssh-action@v1.2.2
 
