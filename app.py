@@ -7,7 +7,7 @@ load_dotenv()
 
 
 app = Flask(__name__)
-
+APP_VERSION = "Production-test-2026-08-30"
 
 DB_HOST = os.getenv("POSTGRES_HOST", "localhost")
 
